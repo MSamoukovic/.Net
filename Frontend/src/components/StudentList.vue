@@ -30,7 +30,7 @@
     </div>
     <div class="row d-flex justify-content-center">
       <div class="col-12 col-lg-8 d-flex ">
-        <b-button @click="$bvModal.show('add');checkMethod('add');getAllCourses();">Dodaj novog studenta <font-awesome-icon icon="user-plus"/></b-button>
+        <b-button @click="$bvModal.show('add');checkMethod('add');getAllCourses();">Dodaj studenta <font-awesome-icon icon="user-plus"/></b-button>
         <StudentCreate @submit="$bvModal.hide('add');getAllStudents()" class="ml-auto" :studentList="list" :isEdit="isEdit" :editItem="editItem" :allCourses="coursesList" />
       </div>
     </div>
@@ -42,7 +42,6 @@ import axios from 'axios'
 import StudentDetails from './StudentDetails.vue'
 import StudentDelete from './StudentDelete.vue'
 import StudentCreate from './StudentCreate.vue'
-
 export default {
   name: 'App',
   components: {

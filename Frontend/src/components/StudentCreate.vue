@@ -105,9 +105,7 @@
 import axios from 'axios'
 import Vue from 'vue';
 import VeeValidate from 'vee-validate';
-
 Vue.use(VeeValidate);
-
 export default {
   name:'StudentCreate',
   data()

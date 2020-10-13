@@ -77,11 +77,15 @@ namespace Test.Services
             student.StudentIdCard = studentDTO.StudentIdCard;
             var statusId = Context.StudentStatus.Where(s => s.Name == studentDTO.StudentStatus).FirstOrDefault().Id;
             student.StudentStatusId = statusId;
+            Context.SaveChanges();
+
 
             var coursesOfStudent = Context.CoursesOfStudents.Where(s => s.StudentId == student.Id).ToList();
             foreach (var course in coursesOfStudent)
             {
                 Context.CoursesOfStudents.Remove(course);
+                Context.SaveChanges();
+
             }
 
             foreach (var course in studentDTO.CoursesList)
